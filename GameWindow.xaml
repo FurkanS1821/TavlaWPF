@@ -1,0 +1,114 @@
+﻿<Window x:Class="TavlaWPF.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TavlaWPF"
+        mc:Ignorable="d"
+        Title="Tavla" SourceInitialized="DisableMaximizeButton" Height="750" Width="980" MinHeight="735" MaxHeight="735" MinWidth="980" MaxWidth="980" Closing="GameWindow_OnClosing">
+    <Grid Name="MainGrid" ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="129*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="256*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/Background.png" AlignmentX="Left" Stretch="Uniform"/>
+        </Grid.Background>
+        <TextBlock Name="OpponentNameBox" Grid.Column="15" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Center" FontSize="25" Text="OpponentName" VerticalAlignment="Top" Height="36" Width="246"/>
+        <Image Name="AboveBorneOffCheckersImage" Grid.Column="15" Source="Assets/BlackChecker.png" HorizontalAlignment="Left" Height="54" Grid.Row="2" VerticalAlignment="Top" Width="57" Margin="25,0,0,0" Grid.RowSpan="2"/>
+        <TextBlock Name="PlayerNameBox" Grid.Column="15" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="11" TextWrapping="Wrap" TextAlignment="Center" FontSize="25" Text="PlayerName" VerticalAlignment="Top" Height="36" Width="246"/>
+        <Image Name="BelowBorneOffCheckersImage" Grid.Column="15" Source="Assets/BlackChecker.png" HorizontalAlignment="Left" Height="54" Grid.Row="10" VerticalAlignment="Top" Width="57" Margin="25,0,0,0" Grid.RowSpan="2"/>
+        <TextBox Name="BorneOffCheckerOverflowIndicatorBelow" Background="Transparent" BorderThickness="0" Grid.Column="15" HorizontalAlignment="Left" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Height="54" Margin="25,0,0,0" Grid.Row="10" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" Grid.RowSpan="2"/>
+        <TextBox Name="BorneOffCheckerOverflowIndicatorAbove" Background="Transparent" BorderThickness="0" Grid.Column="15" HorizontalAlignment="Left" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Height="54" Margin="25,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" Grid.RowSpan="2"/>
+        <Image Name="Checker1" Source="Assets/BlackChecker.png" Grid.Column="13" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker2" Source="Assets/BlackChecker.png" Grid.Column="12" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker3" Source="Assets/BlackChecker.png" Grid.Column="11" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker4" Source="Assets/BlackChecker.png" Grid.Column="10" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker5" Source="Assets/BlackChecker.png" Grid.Column="9" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker6" Source="Assets/BlackChecker.png" Grid.Column="8" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker7" Source="Assets/BlackChecker.png" Grid.Column="6" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker8" Source="Assets/BlackChecker.png" Grid.Column="5" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker9" Source="Assets/BlackChecker.png" Grid.Column="4" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker10" Source="Assets/BlackChecker.png" Grid.Column="3" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker11" Source="Assets/BlackChecker.png" Grid.Column="2" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker12" Source="Assets/BlackChecker.png" Grid.Column="1" HorizontalAlignment="Center" Height="54" Grid.Row="11" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker13" Source="Assets/BlackChecker.png" Grid.Column="1" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker14" Source="Assets/BlackChecker.png" Grid.Column="2" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker15" Source="Assets/BlackChecker.png" Grid.Column="3" HorizontalAlignment="Center" Height="54" Grid.Row="1" VerticalAlignment="Center" Width="54" Margin="0,0,0,0"/>
+        <Image Name="Checker16" Source="Assets/WhiteChecker.png" Grid.Column="4" HorizontalAlignment="Center" Height="54" Grid.Row="1" VerticalAlignment="Center" Width="54" Margin="0,0,0,0"/>
+        <Image Name="Checker17" Source="Assets/WhiteChecker.png" Grid.Column="5" HorizontalAlignment="Center" Height="54" Grid.Row="1" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker18" Source="Assets/WhiteChecker.png" Grid.Column="6" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker19" Source="Assets/WhiteChecker.png" Grid.Column="8" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker20" Source="Assets/WhiteChecker.png" Grid.Column="9" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker21" Source="Assets/WhiteChecker.png" Grid.Column="10" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker22" Source="Assets/WhiteChecker.png" Grid.Column="11" HorizontalAlignment="Center" Height="54" Grid.Row="1" VerticalAlignment="Center" Width="54" Margin="0,0,0,0"/>
+        <Image Name="Checker23" Source="Assets/WhiteChecker.png" Grid.Column="12" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker24" Source="Assets/WhiteChecker.png" Grid.Column="13" HorizontalAlignment="Center" Height="54" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker25" Source="Assets/WhiteChecker.png" Grid.Column="13" HorizontalAlignment="Center" Height="54" Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker26" Source="Assets/WhiteChecker.png" Grid.Column="13" HorizontalAlignment="Center" Height="54" Grid.Row="10" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker27" Source="Assets/WhiteChecker.png" Grid.Column="12" HorizontalAlignment="Center" Height="54" Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker28" Source="Assets/WhiteChecker.png" Grid.Column="12" HorizontalAlignment="Center" Height="54" Grid.Row="10" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="Checker29" Source="Assets/WhiteChecker.png" Grid.Column="11" HorizontalAlignment="Center" Height="54" Grid.Row="2" VerticalAlignment="Center" Width="54" Margin="0,0,0,0"/>
+        <Image Name="Checker30" Source="Assets/WhiteChecker.png" Grid.Column="11" HorizontalAlignment="Center" Height="54" Grid.Row="10" Margin="0,0,0,0" VerticalAlignment="Center" Width="54"/>
+        <Image Name="HitCheckerBelowImage" Source="Assets/WhiteChecker.png" Grid.Column="6" HorizontalAlignment="Center" Height="56" Grid.Row="6" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="54" Grid.ColumnSpan="3"/>
+        <Image Name="HitCheckerAboveImage" Source="Assets/WhiteChecker.png" Grid.Column="6" HorizontalAlignment="Center" Height="56" Grid.Row="6" Margin="0,0,0,0" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="3"/>
+        <Label Name="HitCheckerOverflowIndicatorAbove" Content="0" Grid.Column="7" Grid.Row="6" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="HitCheckerOverflowIndicatorBelow" Content="0" Grid.Column="7" Grid.Row="6" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot1OverflowIndicator" Content="0" Grid.Column="13" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot2OverflowIndicator" Content="0" Grid.Column="12" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot3OverflowIndicator" Content="0" Grid.Column="11" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot4OverflowIndicator" Content="0" Grid.Column="10" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot5OverflowIndicator" Content="0" Grid.Column="9" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot6OverflowIndicator" Content="0" Grid.Column="8" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot7OverflowIndicator" Content="0" Grid.Column="6" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot8OverflowIndicator" Content="0" Grid.Column="5" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot9OverflowIndicator" Content="0" Grid.Column="4" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot10OverflowIndicator" Content="0" Grid.Column="3" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot11OverflowIndicator" Content="0" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot12OverflowIndicator" Content="0" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot13OverflowIndicator" Content="0" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot14OverflowIndicator" Content="0" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot15OverflowIndicator" Content="0" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot16OverflowIndicator" Content="0" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot17OverflowIndicator" Content="0" Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot18OverflowIndicator" Content="0" Grid.Column="6" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot19OverflowIndicator" Content="0" Grid.Column="8" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot20OverflowIndicator" Content="0" Grid.Column="9" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot21OverflowIndicator" Content="0" Grid.Column="10" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot22OverflowIndicator" Content="0" Grid.Column="11" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot23OverflowIndicator" Content="0" Grid.Column="12" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Label Name="Slot24OverflowIndicator" Content="0" Grid.Column="13" Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="54"/>
+        <Image Name="Dice1" Source="Assets/Dice_1.png" Grid.Column="15" HorizontalAlignment="Left" Height="109" Margin="134,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="112"/>
+        <Image Name="Dice2" Source="Assets/Dice_2.png" Grid.Column="15" HorizontalAlignment="Left" Height="109" Margin="17,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="112"/>
+
+    </Grid>
+</Window>

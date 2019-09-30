@@ -1,0 +1,37 @@
+﻿<Window x:Class="TavlaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TavlaWPF"
+        mc:Ignorable="d"
+        Title="Tavla Giriş Ekranı" Height="240" Width="450" MinWidth="450" MinHeight="240">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="İsminizi giriniz:" VerticalAlignment="Top" Margin="10,10,0,0" Height="20" Width="105"/>
+        <Button Name="StartBotMatchButton" Click="StartBotMatchButton_OnClick"  Content="Bota Karşı Oyna" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="20" Grid.Row="2"/>
+        <TextBox Name="PlayerNameBox" HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Row="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" Text="Sunucu IP'si:" VerticalAlignment="Top" Width="105"/>
+        <TextBox Name="EnterIPBox" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" PreviewTextInput="EnterIPBox_OnPreviewTextInput" VerticalAlignment="Top" Width="105"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Sunucu Portu" VerticalAlignment="Top" Height="20" Width="105"/>
+        <TextBox Name="EnterPortToConnectBox" Grid.Column="1" HorizontalAlignment="Left" Height="20" PreviewTextInput="EnterPort_OnPreviewTextInput"  Margin="10,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+        <Button Name="ConnectToServerButton" IsEnabled="False" Content="Sunucuya Bağlan" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="105"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Yayınlanacak Port:" VerticalAlignment="Top" Height="20" Width="105"/>
+        <TextBox Name="EnterPortToPublishBox" PreviewTextInput="EnterPort_OnPreviewTextInput" Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+        <Button Name="StartServerButton" IsEnabled="False" Content="Sunucu Çalıştır" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="105"/>
+
+    </Grid>
+</Window>
