@@ -36,8 +36,7 @@ namespace TavlaWPF
             Checkers.Clear();
             for (var i = 1; i <= 30; i++)
             {
-                var checkerImage = (Image) typeof(GameWindow)
-                    .GetField($"Checker{i}", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(this);
+                var checkerImage = (Image)typeof(GameWindow).GetField($"Checker{i}", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(this);
                 Checkers.Add(new Checker(), checkerImage);
             }
         }
@@ -49,6 +48,8 @@ namespace TavlaWPF
 
             var topTeam = TeamAtBottom.GetOpponent();
             var slots = new byte[24];
+
+            int blackBorneOffCount = 0, whiteBorneOffCount = 0, blackHitCount = 0, whiteHitCount = 0;
 
             foreach (var checker in Checkers)
             {
@@ -64,7 +65,47 @@ namespace TavlaWPF
                 else if (checker.Key.State == CheckerState.BorneOff)
                 {
                     checker.Value.Visibility = Visibility.Hidden;
+                    if (checker.Key.Color == Color.White)
+                    {
+                        whiteBorneOffCount++;
+                    }
+                    else
+                    {
+                        blackBorneOffCount++;
+                    }
                 }
+                else if (checker.Key.State == CheckerState.Hit)
+                {
+                    checker.Value.Visibility = Visibility.Hidden;
+                    if (checker.Key.Color == Color.White)
+                    {
+                        whiteHitCount++;
+                    }
+                    else
+                    {
+                        blackHitCount++;
+                    }
+                }
+            }
+
+            if (whiteBorneOffCount > 0)
+            {
+                // todo
+            }
+
+            if (blackBorneOffCount > 0)
+            {
+                // todo
+            }
+
+            if (whiteHitCount > 0)
+            {
+                // todo
+            }
+
+            if (blackHitCount > 0)
+            {
+                // todo
             }
         }
 
